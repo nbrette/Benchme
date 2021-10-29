@@ -1,37 +1,40 @@
 # Benchme  
 
 ## Description  
-Ce programme permet de réaliser des benchmarks des différents algorithmes de tri (tri à bulle, par sélection, par insertion et par tas).
-Chaque algorithme est testé 3 fois avec les tailles de tableaux suivantes:
+This program generates a benchmark for sorting algorithm timing depending on the size of the array it sorts.
+The algorithms used are:
+- bubble sort
+- heap sort
+- insertion sort
+- selection sort
+
+Each algorithm is tested 3 times for each of these array sizes:
 - 10²
 - 10<sup>3</sup>
 - 10<sup>4</sup>
 - 10<sup>5</sup>
 
-Les algorithmes ne sont pas testés pour 10<sup>6</sup> et 10<sup>7</sup> pour des raisons de temps d'exécution (plusieurs dizaines de minutes pour certains tris).  
-Le programme génère un fichier CSV contenant les temps moyen d'exécution pour chaque algorithme selon la taille des tableaux utilisés.
-
 ## Documentation  
 
-### Conception
-La documentation est réalisée à l'aide de doxygen. 
-Les différents paramètres liés à la génération de la documentation sont décrits dans le Makefile.  
+The documention is generated with doxygen.
 
-### Génération  
+### Installation
 
-Pour générer la documentation:  
+for ubuntu/debian:  
+`sudo apt-get install doxygen`  
+
+### Generate documentation
+
+To generate documentation:  
 `make doc`  
-Un dossier html est alors généré à la racine du projet. Il contient un fichier index.html qui permet d'accéder à la documentation.
+Open the file `/html/index.html` to check the documentation
 
-## Exécution du projet
-Il d'abord nécessaire compiler le projet avec la commande suivante:  
+## Run
+To compile:  
 `make`  
-Une fichier nommé benchme est créé dans le dossier output.  
-Pour l'exécuter:  
-```bash
-cd output
-./benchme nom_fichier.csv
-```
-Si aucun nom de fichier n'est passé en argument le fichier sera nommé par défaut export.csv.  
-Le fichier csv est créé dans le dossier output.
+To run:  
+`./output/benchme`  
+or to choose output filename:  
+`./out/benchme output.csv`  
+The csv contains the statistics
 
